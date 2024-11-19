@@ -17,6 +17,7 @@ function Login() {
     try {
       const session = await authService.login(data);
       if (session) {
+        //agar session hai toh user loged in hai otherwise nahi hai
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(authLogin(userData));
         navigate("/");
